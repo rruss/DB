@@ -68,4 +68,4 @@ SELECT sum(grade) FROM customers;
 
 SELECT count(*) FROM customers WHERE cust_name is not null;
 
-SELECT grade FROM customers ORDER BY grade desc limit 1;
+SELECT max(grade) FROM customers;
