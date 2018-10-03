@@ -54,7 +54,7 @@ SELECT sum(purch_amt) FROM orders;
 
 SELECT avg(purch_amt) FROM orders;
 
-SELECT count(DISTINCT cust_name) FROM customers;
+SELECT count(cust_name) FROM customers WHERE cust_name is not null;
 
 SELECT purch_amt FROM orders ORDER BY purch_amt asc limit 1;
 
@@ -66,6 +66,6 @@ SELECT *FROM customers WHERE customer_id = (SELECT costumer_id FROM orders WHERE
 
 SELECT sum(grade) FROM customers;
 
-SELECT count(*) FROM customers;
+SELECT count(*) FROM customers WHERE cust_name is not null;
 
 SELECT grade FROM customers ORDER BY grade desc limit 1;
