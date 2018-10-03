@@ -60,9 +60,9 @@ SELECT purch_amt FROM orders ORDER BY purch_amt asc limit 1;
 
 SELECT *FROM customers WHERE cust_name LIKE '%b';
 
-SELECT *FROM orders WHERE costumer_id = (SELECT customer_id FROM customers WHERE city = 'New York');
+SELECT *FROM orders WHERE costumer_id in (SELECT customer_id FROM customers WHERE city = 'New York');
 
-SELECT *FROM customers WHERE customer_id = (SELECT costumer_id FROM orders WHERE purch_amt > 10);
+SELECT *FROM customers WHERE customer_id in (SELECT costumer_id FROM orders WHERE purch_amt > 10);
 
 SELECT sum(grade) FROM customers;
 
